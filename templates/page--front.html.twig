@@ -1,0 +1,45 @@
+{% extends "@bootstrap_barrio/layout/page.html.twig" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center Teto-site-header">
+        <h1 class="display-1 fw-bold text-primary">Teto site</h1>
+        <p class="display-5 text-secondary">Welcome to my Teto drupal site!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="display-4 fw-bold text-secondary">Articles</h2>
+        <div class="region-content front-page-article">
+          {{ drupal_entity('node', 82) }}
+        </div>
+        <div class="region-content front-page-article">
+          {{ drupal_entity('node', 83) }}
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h2 class="display-4 fw-bold text-secondary">Images</h2>
+        <div class="region-sidebar">
+          <img src="{{ directory }}/images/teto_plush.jpg" class="img-thumbnail" alt="Image of an Teto plush" title="Teto Plush">
+          <img src="{{ directory }}/images/Teto_Voicepeak.webp" class="img-thumbnail" alt="Image of Voicepeak Teto" title="Voicepeak Teto">
+          <img src="{{ directory }}/images/Teto_utau.webp" class="img-thumbnail" alt="Image of Utau Teto" title="Utau Teto">
+          <img src="{{ directory }}/images/Teto_SynthV.webp" class="img-thumbnail" alt="Image of SynthV Teto" title="SynthV Teto">
+        </div>
+      </div>
+    </div>
+    {% if page.sidebar_first %}
+      <aside class="region-sidebar-first">{{ page.sidebar_first }}</aside>
+    {% endif %}
+    {% if page.sidebar_second %}
+      <aside class="region-sidebar-second">{{ page.sidebar_second }}</aside>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="display-4 fw-bold text-secondary">Menu</h2>
+        <div class="region-menu">{{ drupal_menu('main') }}</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
